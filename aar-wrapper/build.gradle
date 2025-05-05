@@ -2,17 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 24
-        targetSdkVersion 33
-    }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
     }
 }
 
@@ -22,7 +18,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.Mc231'
                 artifactId = 'ffmpeg-kit-aar'
-                version = '1.0.0'
+                version = '1.0.1'
 
                 artifact(file('ffmpeg-kit-full.aar'))
             }
